@@ -4,8 +4,9 @@
 }
 
 .date-range-input {
-    width: 100%;
-    padding: 10px;
+    display: flex;
+    padding: 4px 10px;
+    align-items: center;
     border: 1px solid #ccc;
     border-radius: 6px;
     background: white;
@@ -13,6 +14,37 @@
     text-align: left;
     cursor: pointer;
     transition: border 0.2s ease-in-out;
+    height: 100%;
+
+    button {
+        all: unset;
+        width: 90%;
+    }
+
+    .close-icon {
+        margin: 0 4px;
+        border: none;
+        width: 40px;
+        height: 35px;
+        cursor: pointer;
+        background-color: transparent;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .separator {
+        width: 1px;
+        max-height: 50px;
+        height: 100vh;
+        background: #ddd;
+    }
+
+    .close-icon:hover {
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 100%;
+    }
 }
 
 .date-range-input:hover,
@@ -38,22 +70,22 @@
 
 /* Default positions */
 .anchor-bottom {
-    top: 100%;
+    top: 110%;
     left: 0;
 }
 
 .anchor-top {
-    bottom: 100%;
+    bottom: 110%;
     left: 0;
 }
 
 .anchor-left {
-    right: 100%;
+    right: 110%;
     top: 0;
 }
 
 .anchor-right {
-    left: 100%;
+    left: 110%;
     top: 0;
 }
 
@@ -69,4 +101,34 @@
     min-height: 100%;
     width: 1px;
     background-color: #ddd;
+}
+
+.navigation-icon-left {
+    all: unset;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+}
+
+.navigation-icon-right {
+    all: unset;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+.navigation {
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation:hover {
+    background: #ddd;
 }

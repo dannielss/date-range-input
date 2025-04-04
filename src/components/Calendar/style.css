@@ -52,25 +52,6 @@
     color: #004085;
 }
 
-.calendar-navigation {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px;
-}
-
-.calendar-navigation button {
-    border: none;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    background-color: transparent;
-    border-radius: 100%;
-}
-
-.calendar-navigation button:hover {
-    background: #ddd;
-}
-
 .calendar-day-outside {
     color: #bbb;
     pointer-events: none;

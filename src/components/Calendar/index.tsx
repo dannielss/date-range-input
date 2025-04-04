@@ -1,7 +1,7 @@
 import React from "react";
 import {
     format, startOfMonth, endOfMonth, startOfWeek,
-    endOfWeek, eachDayOfInterval, isToday, isSameMonth, isSameDay, addMonths,
+    endOfWeek, eachDayOfInterval, isToday, isSameMonth, isSameDay,
     isAfter, isBefore
 } from "date-fns";
 
@@ -43,10 +43,10 @@ const Calendar: React.FC<CalendarProps> = ({ month, startDate, endDate, onDateSe
                         <div
                             key={day.toString()}
                             className={`calendar-day 
-                  ${isOutsideMonth ? "calendar-day-outside" : ""}
-                  ${isToday(day) ? "calendar-day-today" : ""}
-                  ${isSelected ? "calendar-day-selected" : ""}
-                  ${isInRange ? "calendar-day-in-range" : ""}`}
+                                ${isOutsideMonth ? "calendar-day-outside" : ""}
+                                ${isToday(day) && !isOutsideMonth ? "calendar-day-today" : ""}
+                                ${isSelected ? "calendar-day-selected" : ""}
+                                ${isInRange ? "calendar-day-in-range" : ""}`}
                             onClick={() => !isOutsideMonth && onDateSelect(day)}
                         >
                             {format(day, "d")}
