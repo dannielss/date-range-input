@@ -57,18 +57,22 @@ const DateRangeInput: React.FC<DateRangeInputProps> = ({
 
     const formatDate = (date: Date | null) => (date ? format(date, "MM/dd/yyyy") : "");
 
+    const handleClear = () => {
+        togglePopup();
+        onChange({
+            startDate: null,
+            endDate: null
+        })
+    }
+
     return (
         <div className="date-range-container">
             <div className="date-range-input">
-
                 <button ref={inputRef} onClick={togglePopup}>
-                    <p>
-                        {startDate ? formatDate(startDate) : "Start Date"} - {endDate ? formatDate(endDate) : "End Date"}
-                    </p>
-
+                    {startDate ? formatDate(startDate) : "Start Date"} - {endDate ? formatDate(endDate) : "End Date"}
                 </button>
                 <div className="separator" />
-                <div className="close-icon">
+                <div className="close-icon" onClick={handleClear}>
                     <IoClose />
                 </div>
             </div>
