@@ -1,58 +1,58 @@
 .calendar {
-    width: 300px;
-    text-align: center;
+  width: 300px;
+  text-align: center;
 }
 
 .calendar-header {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .calendar-weekdays {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    font-weight: bold;
-    color: #666;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-weight: bold;
+  color: #666;
 }
 
 .calendar-weekday {
-    padding: 5px;
+  padding: 5px;
 }
 
 .calendar-days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 4px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
 }
 
 .calendar-day {
-    padding: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.2s;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
 .calendar-day:hover {
-    background: #f0f0f0;
+  background: #f0f0f0;
 }
 
 .calendar-day-today {
-    border: 2px solid #007bff;
-    font-weight: bold;
+  border: 2px solid #007bff;
+  font-weight: bold;
 }
 
 .calendar-day-selected {
-    background: #007bff;
-    color: white;
+  background: #007bff;
+  color: white;
 }
 
 .calendar-day-in-range {
-    background: #cce5ff;
-    color: #004085;
+  background: #cce5ff;
+  color: #004085;
 }
 
 .calendar-day-outside {
-    color: #bbb;
-    pointer-events: none;
+  color: #bbb;
+  pointer-events: none;
 }

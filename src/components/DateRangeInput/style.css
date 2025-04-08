@@ -3,56 +3,6 @@
     width: 280px;
 }
 
-.date-range-input {
-    display: flex;
-    padding: 4px 10px;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background: white;
-    font-size: 16px;
-    text-align: left;
-    cursor: pointer;
-    transition: border 0.2s ease-in-out;
-    height: 100%;
-
-    button {
-        all: unset;
-        width: 90%;
-    }
-
-    .close-icon {
-        margin: 0 4px;
-        border: none;
-        width: 40px;
-        height: 35px;
-        cursor: pointer;
-        background-color: transparent;
-        border-radius: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .separator {
-        width: 1px;
-        max-height: 50px;
-        height: 100vh;
-        background: #ddd;
-    }
-
-    .close-icon:hover {
-        background: rgba(0, 0, 0, 0.1);
-        border-radius: 100%;
-    }
-}
-
-.date-range-input:hover,
-.date-range-input:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
 .calendar-container {
     display: flex;
     gap: 20px;

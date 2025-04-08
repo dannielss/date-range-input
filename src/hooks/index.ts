@@ -1,1 +1,1 @@
-export { default as useAnchorPosition } from "./useAnchorPosition"
+export { default as useAnchorPosition } from './useAnchorPosition';
