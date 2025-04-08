@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { addMonths } from 'date-fns';
+import clsx from 'clsx';
 import Calendar from '../Calendar';
 import Input from '../Input';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
@@ -15,6 +16,13 @@ interface DateRangeInputProps {
   onToggle?: (open: boolean) => void;
   anchor?: 'top' | 'bottom' | 'left' | 'right';
   calendars?: number;
+  highlightColor?: string;
+  highlightRangeColor?: string;
+  renderDay?: (date: Date, isSelected: boolean, isInRange: boolean) => React.ReactNode;
+  className?: string;
+  popupClassName?: string;
+  calendarContainerClassName?: string;
+  navigationButtonClassName?: string;
 }
 
 const DateRangeInput: React.FC<DateRangeInputProps> = ({
@@ -26,6 +34,13 @@ const DateRangeInput: React.FC<DateRangeInputProps> = ({
   onToggle,
   anchor = 'bottom',
   calendars = 2,
+  highlightColor,
+  highlightRangeColor,
+  renderDay,
+  className,
+  popupClassName,
+  calendarContainerClassName,
+  navigationButtonClassName,
 }) => {
   const [internalIsOpen, setInternalIsOpen] = useState(false);
   const [currentMonth, setCurrentMonth] = useState(initialMonth);
@@ -66,7 +81,6 @@ const DateRangeInput: React.FC<DateRangeInputProps> = ({
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Node;
-
       if (
         isOpen &&
         popupRef.current &&
@@ -88,7 +102,7 @@ const DateRangeInput: React.FC<DateRangeInputProps> = ({
   }, [isOpen, externalIsOpen, onToggle]);
 
   return (
-    <div className="date-range-container">
+    <div className={clsx('date-range-container', className)}>
       <Input
         inputRef={inputRef}
         startDate={startDate}
@@ -98,14 +112,18 @@ const DateRangeInput: React.FC<DateRangeInputProps> = ({
       />
 
       {isOpen && (
-        <div ref={popupRef} className={`date-range-popup anchor-${adjustedAnchor}`}>
-          <div className="calendar-container">
+        <div
+          ref={popupRef}
+          className={clsx('date-range-popup', `anchor-${adjustedAnchor}`, popupClassName)}
+        >
+          <div className={clsx('calendar-container', calendarContainerClassName)}>
             <button
-              className="navigation-icon-left navigation"
+              className={clsx('navigation-icon-left', 'navigation', navigationButtonClassName)}
               onClick={() => setCurrentMonth(addMonths(currentMonth, -1))}
             >
               <FaArrowLeft />
             </button>
+
             {Array.from({ length: calendars }).map((_, index) => (
               <div key={index}>
                 <Calendar
@@ -113,11 +131,15 @@ const DateRangeInput: React.FC<DateRangeInputProps> = ({
                   startDate={startDate}
                   endDate={endDate}
                   onDateSelect={handleDateSelect}
+                  highlightColor={highlightColor}
+                  highlightRangeColor={highlightRangeColor}
+                  renderDay={renderDay}
                 />
               </div>
             ))}
+
             <button
-              className="navigation-icon-right navigation"
+              className={clsx('navigation-icon-right', 'navigation', navigationButtonClassName)}
               onClick={() => setCurrentMonth(addMonths(currentMonth, 1))}
             >
               <FaArrowRight />

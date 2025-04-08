@@ -1,84 +1,82 @@
 .date-range-container {
-    position: relative;
-    width: 280px;
+  position: relative;
+  width: 17.5rem;
 }
 
 .calendar-container {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
+  display: flex;
+  gap: 1.25rem;
+  justify-content: space-between;
 }
 
 .date-range-popup {
-    position: absolute;
-    background: white;
-    border: 1px solid #ccc;
-    padding: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+  position: absolute;
+  background: white;
+  border: 0.0625rem solid #ccc;
+  padding: 0.625rem;
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
-/* Default positions */
 .anchor-bottom {
-    top: 110%;
-    left: 0;
+  top: 110%;
+  left: 0;
 }
 
 .anchor-top {
-    bottom: 110%;
-    left: 0;
+  bottom: 110%;
+  left: 0;
 }
 
 .anchor-left {
-    right: 110%;
-    top: 0;
+  right: 110%;
+  top: 0;
 }
 
 .anchor-right {
-    left: 110%;
-    top: 0;
+  left: 110%;
+  top: 0;
 }
 
-/* Prevent overflow */
-@media (max-width: 600px) {
-    .date-range-popup {
-        left: 0 !important;
-        right: 0 !important;
-    }
+@media (max-width: 37.5rem) {
+  .date-range-popup {
+    left: 0 !important;
+    right: 0 !important;
+  }
 }
 
 .calendar-separator {
-    min-height: 100%;
-    width: 1px;
-    background-color: #ddd;
+  min-height: 100%;
+  width: 0.0625rem;
+  background-color: #ddd;
 }
 
 .navigation-icon-left {
-    all: unset;
-    position: absolute;
-    top: 16px;
-    left: 16px;
+  all: unset;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
 }
 
 .navigation-icon-right {
-    all: unset;
-    position: absolute;
-    top: 16px;
-    right: 16px;
+  all: unset;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 .navigation {
-    border: none;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    background-color: transparent;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  border: none;
+  width: 1.875rem;
+  height: 1.875rem;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navigation:hover {
-    background: #ddd;
+  background: #ddd;
 }

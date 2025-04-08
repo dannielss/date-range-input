@@ -14,15 +14,28 @@ import {
 } from 'date-fns';
 
 import './style.css';
+import { customCalendarStyle } from '../../utils';
+import clsx from 'clsx';
 
 interface CalendarProps {
   month: Date;
   startDate: Date | null;
   endDate: Date | null;
   onDateSelect: (date: Date) => void;
+  highlightColor?: string;
+  highlightRangeColor?: string;
+  renderDay?: (date: Date, isSelected: boolean, isInRange: boolean) => React.ReactNode;
 }
 
-const Calendar: React.FC<CalendarProps> = ({ month, startDate, endDate, onDateSelect }) => {
+const Calendar: React.FC<CalendarProps> = ({
+  month,
+  startDate,
+  endDate,
+  onDateSelect,
+  highlightColor = '#007bff',
+  highlightRangeColor = '#cce5ff',
+  renderDay,
+}) => {
   const firstDayOfMonth = startOfMonth(month);
   const lastDayOfMonth = endOfMonth(firstDayOfMonth);
 
@@ -56,17 +69,27 @@ const Calendar: React.FC<CalendarProps> = ({ month, startDate, endDate, onDateSe
             isAfter(day, startDate) &&
             isBefore(day, endDate);
 
+          const dayClass = clsx(
+            'calendar-day',
+            isSameDay(day, new Date()) && 'calendar-day-today',
+            isSelected && 'calendar-day-selected',
+            isInRange && 'calendar-day-in-range',
+            isOutsideMonth && 'calendar-day-outside'
+          );
+
           return (
             <div
               key={day.toString()}
-              className={`calendar-day 
-                                ${isOutsideMonth ? 'calendar-day-outside' : ''}
-                                ${isToday(day) && !isOutsideMonth ? 'calendar-day-today' : ''}
-                                ${isSelected ? 'calendar-day-selected' : ''}
-                                ${isInRange ? 'calendar-day-in-range' : ''}`}
+              className={dayClass}
               onClick={() => !isOutsideMonth && onDateSelect(day)}
+              style={customCalendarStyle(
+                isSelected,
+                isInRange,
+                highlightColor,
+                highlightRangeColor
+              )}
             >
-              {format(day, 'd')}
+              {renderDay ? renderDay(day, !!isSelected, !!isInRange) : format(day, 'd')}
             </div>
           );
         })}

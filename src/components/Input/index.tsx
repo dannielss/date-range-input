@@ -24,9 +24,11 @@ const Input: React.FC<InputProps> = ({
         {startDate ? formatDate(startDate) : 'Start Date'} -{' '}
         {endDate ? formatDate(endDate) : 'End Date'}
       </button>
-      <div className="separator" />
-      <div className="close-icon" onClick={handleClear}>
-        <IoClose />
+      <div className="close-container">
+        <div className="separator" />
+        <div className="close-icon" onClick={handleClear}>
+          <IoClose />
+        </div>
       </div>
     </div>
   );
