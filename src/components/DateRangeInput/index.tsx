@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { addMonths, format } from "date-fns";
 import Calendar from "../Calendar";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa"
@@ -58,12 +58,36 @@ const DateRangeInput: React.FC<DateRangeInputProps> = ({
     const formatDate = (date: Date | null) => (date ? format(date, "MM/dd/yyyy") : "");
 
     const handleClear = () => {
-        togglePopup();
+        setInternalIsOpen(false)
         onChange({
             startDate: null,
             endDate: null
         })
     }
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            const target = event.target as Node;
+
+            if (
+                isOpen &&
+                popupRef.current &&
+                inputRef.current &&
+                !popupRef.current.contains(target) &&
+                !inputRef.current.contains(target)
+            ) {
+                if (externalIsOpen === undefined) {
+                    setInternalIsOpen(false);
+                }
+                onToggle?.(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [isOpen, externalIsOpen, onToggle]);
 
     return (
         <div className="date-range-container">
