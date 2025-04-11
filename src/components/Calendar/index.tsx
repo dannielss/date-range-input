@@ -50,8 +50,8 @@ const Calendar: React.FC<CalendarProps> = ({
       <h2 className="calendar-header">{format(firstDayOfMonth, 'MMMM yyyy')}</h2>
 
       <div className="calendar-weekdays">
-        {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map(day => (
-          <div key={day} className="calendar-weekday">
+        {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day, index) => (
+          <div key={index} className="calendar-weekday">
             {day}
           </div>
         ))}
