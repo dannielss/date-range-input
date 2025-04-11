@@ -9,6 +9,8 @@ interface InputProps {
   endDate: Date | null;
   handleClear(): void;
   togglePopup(): void;
+  startDatePlaceholder?: string;
+  endDatePlaceholder?: string;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -17,12 +19,14 @@ const Input: React.FC<InputProps> = ({
   startDate,
   endDate,
   handleClear,
+  startDatePlaceholder = 'Start Date',
+  endDatePlaceholder = 'End Date',
 }) => {
   return (
     <div className="date-range-input">
       <button ref={inputRef} onClick={togglePopup}>
-        {startDate ? formatDate(startDate) : 'Start Date'} -{' '}
-        {endDate ? formatDate(endDate) : 'End Date'}
+        {startDate ? formatDate(startDate) : startDatePlaceholder} -{' '}
+        {endDate ? formatDate(endDate) : endDatePlaceholder}
       </button>
       <div className="close-container">
         <div className="separator" />
