@@ -6,19 +6,24 @@ export const customCalendarStyle = (
   isSelected: boolean | null,
   isInRange: boolean | null,
   highlightColor: string,
-  highlightRangeColor: string
+  highlightRangeColor: string,
+  color: string
 ) => {
   if (isSelected) {
     return {
       backgroundColor: highlightColor,
       borderColor: highlightColor,
-      color: 'white',
+      color,
     };
   } else if (isInRange) {
     return {
       backgroundColor: highlightRangeColor,
       borderColor: highlightRangeColor,
-      color: 'white',
+      color,
     };
   }
+
+  return {
+    borderColor: highlightColor,
+  };
 };

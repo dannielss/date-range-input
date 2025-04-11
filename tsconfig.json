@@ -8,10 +8,8 @@
     "jsx": "react-jsx",
     "strict": true,
     "esModuleInterop": true,
-    "moduleResolution": "node",
+    "moduleResolution": "node"
   },
-  "include": [
-    "src/*",
-    "index.ts"
-  ]
+  "include": ["src/*", "index.ts"],
+  "exclude": ["node_modules/", "dist/"]
 }

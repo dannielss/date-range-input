@@ -6,7 +6,6 @@ import {
   startOfWeek,
   endOfWeek,
   eachDayOfInterval,
-  isToday,
   isSameMonth,
   isSameDay,
   isAfter,
@@ -25,6 +24,7 @@ interface CalendarProps {
   highlightColor?: string;
   highlightRangeColor?: string;
   renderDay?: (date: Date, isSelected: boolean, isInRange: boolean) => React.ReactNode;
+  color?: string;
 }
 
 const Calendar: React.FC<CalendarProps> = ({
@@ -35,6 +35,7 @@ const Calendar: React.FC<CalendarProps> = ({
   highlightColor = '#007bff',
   highlightRangeColor = '#cce5ff',
   renderDay,
+  color = '#fff',
 }) => {
   const firstDayOfMonth = startOfMonth(month);
   const lastDayOfMonth = endOfMonth(firstDayOfMonth);
@@ -86,7 +87,8 @@ const Calendar: React.FC<CalendarProps> = ({
                 isSelected,
                 isInRange,
                 highlightColor,
-                highlightRangeColor
+                highlightRangeColor,
+                color
               )}
             >
               {renderDay ? renderDay(day, !!isSelected, !!isInRange) : format(day, 'd')}
