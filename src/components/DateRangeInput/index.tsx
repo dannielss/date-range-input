@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { addMonths } from 'date-fns';
+import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
+import { useAnchorPosition } from '../../hooks';
 import clsx from 'clsx';
 import Calendar from '../Calendar';
 import Input from '../Input';
-import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
-import { useAnchorPosition } from '../../hooks';
 import './style.css';
 
 export interface DateRangeInputProps {

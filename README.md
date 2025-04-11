@@ -42,6 +42,7 @@ function App() {
       startDate={range.startDate}
       endDate={range.endDate}
       onChange={setRange}
+      calendars={2}
       anchor="bottom"
       color="#e11d48"
       highlightColor="#333"
