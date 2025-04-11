@@ -7,7 +7,7 @@ import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 import { useAnchorPosition } from '../../hooks';
 import './style.css';
 
-interface DateRangeInputProps {
+export interface DateRangeInputProps {
   startDate: Date | null;
   endDate: Date | null;
   onChange: (range: { startDate: Date | null; endDate: Date | null }) => void;
@@ -23,9 +23,12 @@ interface DateRangeInputProps {
   popupClassName?: string;
   calendarContainerClassName?: string;
   navigationButtonClassName?: string;
+  color?: string;
+  startDatePlaceholder?: string;
+  endDatePlaceholder?: string;
 }
 
-const DateRangeInput: React.FC<DateRangeInputProps> = ({
+export const DateRangeInput: React.FC<DateRangeInputProps> = ({
   startDate,
   endDate,
   onChange,
@@ -41,6 +44,9 @@ const DateRangeInput: React.FC<DateRangeInputProps> = ({
   popupClassName,
   calendarContainerClassName,
   navigationButtonClassName,
+  color,
+  startDatePlaceholder,
+  endDatePlaceholder,
 }) => {
   const [internalIsOpen, setInternalIsOpen] = useState(false);
   const [currentMonth, setCurrentMonth] = useState(initialMonth);
@@ -109,6 +115,8 @@ const DateRangeInput: React.FC<DateRangeInputProps> = ({
         endDate={endDate}
         handleClear={handleClear}
         togglePopup={togglePopup}
+        startDatePlaceholder={startDatePlaceholder}
+        endDatePlaceholder={endDatePlaceholder}
       />
 
       {isOpen && (
@@ -134,6 +142,7 @@ const DateRangeInput: React.FC<DateRangeInputProps> = ({
                   highlightColor={highlightColor}
                   highlightRangeColor={highlightRangeColor}
                   renderDay={renderDay}
+                  color={color}
                 />
               </div>
             ))}
@@ -150,5 +159,3 @@ const DateRangeInput: React.FC<DateRangeInputProps> = ({
     </div>
   );
 };
-
-export default DateRangeInput;

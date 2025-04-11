@@ -7,6 +7,8 @@
   display: flex;
   gap: 1.25rem;
   justify-content: space-between;
+  max-width: 90vw;
+  overflow-x: auto;
 }
 
 .date-range-popup {
@@ -36,13 +38,6 @@
 .anchor-right {
   left: 110%;
   top: 0;
-}
-
-@media (max-width: 37.5rem) {
-  .date-range-popup {
-    left: 0 !important;
-    right: 0 !important;
-  }
 }
 
 .calendar-separator {
