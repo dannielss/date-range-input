@@ -29,6 +29,18 @@ jobs:
       - name: Build library with Rollup
         run: npm run build
 
+      - name: Debug NPM token (temporário!)
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -z "$NPM_TOKEN" ]; then
+            echo "❌ NPM_TOKEN is NOT set"
+            exit 1
+          else
+            echo "✅ NPM_TOKEN is set (first 4 chars): ${NPM_TOKEN:0:4}****"
+            echo "Token length: ${#NPM_TOKEN}"
+          fi
+
       - name: Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
