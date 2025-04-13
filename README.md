@@ -1,10 +1,10 @@
-# date-range-input
+# @camerata/date-range-input
 
 > A lightweight, customizable React **Date Range Input** component with popup calendar(s). Built with TypeScript and Pure CSS.
 
-![npm](https://img.shields.io/npm/v/date-range-input)
-![license](https://img.shields.io/npm/l/date-range-input)
-![bundle size](https://img.shields.io/bundlephobia/minzip/date-range-input)
+![npm](https://img.shields.io/npm/v/@camerata/date-range-input)
+![license](https://img.shields.io/npm/l/@camerata/date-range-input)
+![bundle size](https://img.shields.io/bundlephobia/minzip/@camerata/date-range-input)
 
 ---
 
@@ -81,4 +81,4 @@ function App() {
 
 ## License
 
-**date-range-input** is released under the **MIT** license.
+**@camerata/date-range-input** is released under the **MIT** license.
