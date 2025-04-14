@@ -20,9 +20,9 @@
 ## Installation
 
 ```bash
-npm install date-range-input
+npm i @cameratajs/react-date-range-input
 # or
-yarn add date-range-input
+yarn add @cameratajs/react-date-range-input
 ```
 
 ## Usage
