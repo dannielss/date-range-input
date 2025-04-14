@@ -1,6 +1,6 @@
 {
-  "name": "@camerata/date-range-input",
-  "version": "1.0.0",
+  "name": "@cameratajs/react-date-range-input",
+  "version": "1.0.1",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
