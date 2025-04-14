@@ -1,5 +1,5 @@
 {
-  "name": "@camerata/date-range-input",
+  "name": "@cameratajs/date-range-input",
   "version": "1.0.0",
   "type": "module",
   "main": "dist/index.js",
