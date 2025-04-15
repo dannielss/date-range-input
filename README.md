@@ -5,6 +5,7 @@
 ![NPM Version](https://img.shields.io/npm/v/%40cameratajs%2Freact-date-range-input)
 ![NPM License](https://img.shields.io/npm/l/%40cameratajs%2Freact-date-range-input)
 ![NPM Downloads](https://img.shields.io/npm/dm/%40cameratajs%2Freact-date-range-input)
+![Coverage Status](https://coveralls.io/repos/github/dannielss/react-date-range-input/badge.svg?branch=main)
 
 ---
 
@@ -22,7 +23,6 @@
 ![Date Range Input Demo](https://github.com/user-attachments/assets/49743911-e269-4456-8cf1-5e8932e9d1da)
 
 ---
-
 
 ## Installation
 
