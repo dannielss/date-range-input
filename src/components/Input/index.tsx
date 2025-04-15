@@ -30,7 +30,7 @@ const Input: React.FC<InputProps> = ({
       </button>
       <div className="close-container">
         <div className="separator" />
-        <div className="close-icon" onClick={handleClear}>
+        <div className="close-icon" onClick={handleClear} data-testid="close-icon">
           <IoClose />
         </div>
       </div>

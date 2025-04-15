@@ -8,8 +8,10 @@
     "jsx": "react-jsx",
     "strict": true,
     "esModuleInterop": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "types": ["jest", "@testing-library/jest-dom"]
   },
-  "include": ["src/*", "index.ts"],
+  "include": ["src", "index.ts", "jest.setup.ts"],
   "exclude": ["node_modules/", "dist/"]
 }

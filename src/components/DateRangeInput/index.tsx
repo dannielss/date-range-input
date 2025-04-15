@@ -128,6 +128,7 @@ export const DateRangeInput: React.FC<DateRangeInputProps> = ({
             <button
               className={clsx('navigation-icon-left', 'navigation', navigationButtonClassName)}
               onClick={() => setCurrentMonth(addMonths(currentMonth, -1))}
+              data-testid="left-arrow"
             >
               <FaArrowLeft />
             </button>
@@ -150,6 +151,7 @@ export const DateRangeInput: React.FC<DateRangeInputProps> = ({
             <button
               className={clsx('navigation-icon-right', 'navigation', navigationButtonClassName)}
               onClick={() => setCurrentMonth(addMonths(currentMonth, 1))}
+              data-testid="right-arrow"
             >
               <FaArrowRight />
             </button>
