@@ -38,12 +38,13 @@ const Calendar: React.FC<CalendarProps> = ({
   color = '#fff',
 }) => {
   const firstDayOfMonth = startOfMonth(month);
-  const lastDayOfMonth = endOfMonth(firstDayOfMonth);
 
   const firstDayGrid = startOfWeek(firstDayOfMonth);
-  const lastDayGrid = endOfWeek(lastDayOfMonth);
-
-  const days = eachDayOfInterval({ start: firstDayGrid, end: lastDayGrid });
+  const days = Array.from(
+    { length: 42 },
+    (_, i) =>
+      new Date(firstDayGrid.getFullYear(), firstDayGrid.getMonth(), firstDayGrid.getDate() + i)
+  );
 
   return (
     <div className="calendar">
