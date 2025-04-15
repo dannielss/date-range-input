@@ -74,10 +74,11 @@ jobs:
 
       - name: Create GitHub Release
         if: steps.check.outputs.version_changed == 'true'
+        id: create-release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: 'v${{ steps.check.outputs.new_version }}'
-          release_name: 'Release v${{ steps.check.outputs.new_version }}'
+          name: 'Release v${{ steps.check.outputs.new_version }}'
           body: |
             ## Changelog:
             $(cat changelog.txt)

@@ -20,7 +20,7 @@ jobs:
         run: npm ci
 
       - name: Run tests with coverage
-        run: npm test -- --coverage
+        run: npm run test
 
       - name: Upload to Coveralls
         run: npx coveralls < coverage/lcov.info
