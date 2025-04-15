@@ -8,6 +8,7 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -46,7 +47,7 @@ jobs:
         if: steps.check.outputs.version_changed == 'true'
         run: npm run build
 
-      - name: Publish
+      - name: Publish to NPM
         if: steps.check.outputs.version_changed == 'true'
         run: npm publish --access public --no-git-checks
         env:
@@ -66,21 +67,12 @@ jobs:
           git tag -f latest
           git push origin latest --force
 
-      - name: Generate Changelog
-        if: steps.check.outputs.version_changed == 'true'
-        run: |
-          changelog=$(git log ${LATEST_TAG}..HEAD --oneline --no-merges)
-          echo "$changelog" > changelog.txt
-
       - name: Create GitHub Release
         if: steps.check.outputs.version_changed == 'true'
-        id: create-release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: 'v${{ steps.check.outputs.new_version }}'
-          name: 'Release v${{ steps.check.outputs.new_version }}'
-          body: |
-            ## Changelog:
-            $(cat changelog.txt)
+          tag_name: v${{ steps.check.outputs.new_version }}
+          name: v${{ steps.check.outputs.new_version }}
+          generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
