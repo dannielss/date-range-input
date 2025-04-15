@@ -17,6 +17,13 @@
 
 ---
 
+## Demo
+
+![Date Range Input Demo](https://github.com/user-attachments/assets/49743911-e269-4456-8cf1-5e8932e9d1da)
+
+---
+
+
 ## Installation
 
 ```bash
@@ -24,6 +31,8 @@ npm i @cameratajs/react-date-range-input
 # or
 yarn add @cameratajs/react-date-range-input
 ```
+
+---
 
 ## Usage
 
@@ -54,9 +63,11 @@ function App() {
 }
 ```
 
+---
+
 ## API
 
-## Props
+### Props
 
 | Prop                         | Type                                                                  | Description                             |
 | ---------------------------- | --------------------------------------------------------------------- | --------------------------------------- |
@@ -78,6 +89,8 @@ function App() {
 | `color`                      | `string`                                                              | Text color for selected days            |
 | `startDatePlaceholder`       | `string`                                                              | Placeholder for the start date input    |
 | `endDatePlaceholder`         | `string`                                                              | Placeholder for the end date input      |
+
+---
 
 ## License
 
