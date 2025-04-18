@@ -20,7 +20,6 @@ export default {
       babelHelpers: 'bundled',
     }),
     postcss({
-      extract: true,
       inject: true,
       minimize: true,
     }),
