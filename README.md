@@ -1,6 +1,8 @@
 # react-date-range-input
 
-> A lightweight, customizable React **Date Range Input** component with popup calendar(s). Built with TypeScript and Pure CSS.
+A lightweight, customizable React **Date Range Input** component with popup calendar(s). Built with TypeScript and Pure CSS.
+
+![React Date Range Input Demo](https://github.com/user-attachments/assets/0e0f9afe-7684-4f28-8fba-414c7d4e3cc6)
 
 ![NPM Version](https://img.shields.io/npm/v/%40cameratajs%2Freact-date-range-input)
 ![NPM License](https://img.shields.io/npm/l/%40cameratajs%2Freact-date-range-input)
@@ -20,7 +22,9 @@
 
 ## Demo
 
-![React Date Range Input Demo](https://github.com/user-attachments/assets/0e0f9afe-7684-4f28-8fba-414c7d4e3cc6)
+Check out the live demo of the **React Date Range Input** component in action:
+
+[**Live Demo**](https://codesandbox.io/p/sandbox/8vyk78)
 
 ---
 
