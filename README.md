@@ -20,7 +20,7 @@
 
 ## Demo
 
-![Date Range Input Demo](https://github.com/user-attachments/assets/49743911-e269-4456-8cf1-5e8932e9d1da)
+![React Date Range Input Demo](https://github.com/user-attachments/assets/0e0f9afe-7684-4f28-8fba-414c7d4e3cc6)
 
 ---
 

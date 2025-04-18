@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { addMonths } from 'date-fns';
-import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
+import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/solid';
 import { useAnchorPosition } from '../../hooks';
 import clsx from 'clsx';
 import Calendar from '../Calendar';
@@ -130,7 +130,7 @@ export const DateRangeInput: React.FC<DateRangeInputProps> = ({
               onClick={() => setCurrentMonth(addMonths(currentMonth, -1))}
               data-testid="left-arrow"
             >
-              <FaArrowLeft />
+              <ArrowLeftIcon width={20} />
             </button>
 
             {Array.from({ length: calendars }).map((_, index) => (
@@ -153,7 +153,7 @@ export const DateRangeInput: React.FC<DateRangeInputProps> = ({
               onClick={() => setCurrentMonth(addMonths(currentMonth, 1))}
               data-testid="right-arrow"
             >
-              <FaArrowRight />
+              <ArrowRightIcon width={20} />
             </button>
           </div>
         </div>

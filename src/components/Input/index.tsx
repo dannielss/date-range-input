@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoClose } from 'react-icons/io5';
+import { XMarkIcon } from '@heroicons/react/24/solid';
 import { formatDate } from '../../utils';
 import './style.css';
 
@@ -31,7 +31,7 @@ const Input: React.FC<InputProps> = ({
       <div className="close-container">
         <div className="separator" />
         <div className="close-icon" onClick={handleClear} data-testid="close-icon">
-          <IoClose />
+          <XMarkIcon width={20} />
         </div>
       </div>
     </div>

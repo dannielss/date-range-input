@@ -46,6 +46,7 @@
   .close-icon:hover {
     background: rgba(0, 0, 0, 0.1);
     border-radius: 100%;
+    cursor: pointer;
   }
 }
 
